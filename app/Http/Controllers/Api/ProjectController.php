@@ -18,6 +18,7 @@ class ProjectController extends Controller
 
     public function show($slug){
         $project = Project::with('languages','types')->where('slug', $slug)->first();
+
         if($project){
             return response()->json([
                 'success' => true,

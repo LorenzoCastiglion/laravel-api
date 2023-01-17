@@ -50,8 +50,9 @@
                 </tbody>
         
         </table>
-       
+       {{$projects->links('vendor.pagination.bootstrap-5')}}
     </div>
+
     @include('partials.admin.modal-delete')
 @endsection
 
