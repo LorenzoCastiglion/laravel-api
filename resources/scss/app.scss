@@ -1,0 +1,37 @@
+@import '~bootstrap/scss/bootstrap';
+
+
+
+
+#admin{
+    height: 100vh;
+    display:flex;
+  
+    #wrapper{
+      flex-grow: 1;
+    }
+    #sidebarMenu {
+      background-color: black;
+      color: white;
+    }
+  }
+
+
+//   tabella index
+.table-responsive {
+    max-height:550px
+}
+
+// avatar img
+.img-profile{
+    height: 30px;
+    
+}
+
+.show-contain{
+  height: 600px;
+}
+
+.edit-contain{
+  height: 600px;
+}
