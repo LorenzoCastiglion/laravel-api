@@ -6,9 +6,11 @@ use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
+use app\Models\User;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Type;
 use App\Models\Language;
+use Illuminate\Support\Facades\Auth;
 
 
 class ProjectController extends Controller
@@ -20,8 +22,16 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::paginate(5);
-        $types = Type::all();
+
+
+        if(Auth::user()->isAdmin()){
+            $projects = Project::paginate(5);
+            $types = Type::all();
+        } else {
+            $userId = Auth::id();
+            $projects = Project::where('user_id', $userId)->paginate(5);
+        }
+       
         
         return view('admin.projects.index', compact('projects','types', ));
     }
