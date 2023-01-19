@@ -6,7 +6,7 @@ use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
-use app\Models\User;
+
 use Illuminate\Support\Facades\Storage;
 use App\Models\Type;
 use App\Models\Language;
